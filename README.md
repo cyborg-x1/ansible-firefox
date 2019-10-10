@@ -5,7 +5,7 @@ Extensions are installed but need to be manually enabled from firefox.
 
 ## Requirements
 
-[requests][0] is required on the remote host to install extensions.
+[requests][0] and [configparser][1] are required on the remote host to install extensions.
 
 ## Role Variables
 
@@ -26,7 +26,7 @@ The `firefox_profiles` is object with profile names als fields. For each profile
 
   vars:
     firefox_profiles:
-      default:
+      default: #under newer Ubuntu versions default selected is called default-release
         extensions:
           - ublock-origin
         preferences:
@@ -44,7 +44,7 @@ The `firefox_profiles` is object with profile names als fields. For each profile
           datareporting.healthreport.uploadEnabled: "false"
 
   roles:
-     - firefox
+     - basvandenbrink.firefox
 ```
 
 ## Credits
@@ -53,7 +53,7 @@ This Ansible role is a heavily modified version of the [Ansible role](https://gi
 
 ## License
 
-
 GPLv2
 
 [0]: http://docs.python-requests.org/en/master "requests"
+[1]: https://docs.python.org/3/library/configparser.html "configparser"
