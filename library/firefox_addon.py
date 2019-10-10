@@ -11,8 +11,13 @@ import configparser
 import shutil
 import os
 import json
-from urllib.parse import urlparse
 import requests
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+     from urlparse import urlparse
+
 
 class FirefoxExtension:
     def __init__(self, slug, profile_path):
